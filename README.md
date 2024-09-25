@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/9719dc71-e8f2-4259-aa2a-4f2d219f52aa
 >Create and build the workspace
 >```bash
 >mkdir freddy_ws
->cd mkdir && mkdir src
+>cd freddy_ws && mkdir src
 >cd src
 >git clone https://github.com/a2s-institute/freddy-gazebo-simulation.git
 >cd .. && colcon build
