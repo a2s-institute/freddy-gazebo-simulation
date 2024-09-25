@@ -23,22 +23,22 @@ https://github.com/user-attachments/assets/9719dc71-e8f2-4259-aa2a-4f2d219f52aa
 >```bash
 >sudo apt-get install ros-humble-ros-gzharmonic
 >```
->Create and build the workspace
+>Create the simulation workspace
 >```bash
 >mkdir freddy_ws
 >cd freddy_ws && mkdir src
 >cd src
 >git clone https://github.com/a2s-institute/freddy-gazebo-simulation.git
->cd .. && colcon build
->source install/setup.bash
 >```
 >The package's dependencies can be installed with the following command:
 >```bash
->cd src
 >vcs import < freddy-gazebo-simulation/dep.repos
 >```
->
->
+>Build the workspace
+>```bash
+>cd .. && colcon build
+>source install/setup.bash
+>```
 > When building the workspace, ensure that the environment variable `GZ_VERSION` is set to `harmonic`. This can be done with the following command:
 >```bash
 >export GZ_VERSION=harmonic
