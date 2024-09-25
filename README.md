@@ -19,16 +19,25 @@ https://github.com/user-attachments/assets/9719dc71-e8f2-4259-aa2a-4f2d219f52aa
 >sudo apt install ros-${ROS_DISTRO}-ros2-control ros-${ROS_DISTRO}-ros2-controllers
 >```
 >
->The package's dependencies can be installed with the following command:
->```bash
->cd ./src
->vcs import < ../dep.repos
->```
->
 >If you are using ROS2 Humble, install Gazebo Harmonic using the following command. Note that Gazebo Harmonic and ROS2 Humble is a 'non-default Gazebo/ROS2 pairing'.
 >```bash
->apt-get install ros-humble-ros-gzgarden
+>sudo apt-get install ros-humble-ros-gzharmonic
 >```
+>Create and build the workspace
+>```bash
+>mkdir freddy_ws
+>cd mkdir && mkdir src
+>cd src
+>git clone https://github.com/a2s-institute/freddy-gazebo-simulation.git
+>cd .. && colcon build
+>source install/setup.bash
+>```
+>The package's dependencies can be installed with the following command:
+>```bash
+>cd src
+>vcs import < freddy-gazebo-simulation/dep.repos
+>```
+>
 >
 > When building the workspace, ensure that the environment variable `GZ_VERSION` is set to `harmonic`. This can be done with the following command:
 >```bash
