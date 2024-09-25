@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/9719dc71-e8f2-4259-aa2a-4f2d219f52aa
 >The package's dependencies can be installed with the following command:
 >```bash
 >cd ./src
->vcs import < freddy_gazebo/dep.repos
+>vcs import < ../dep.repos
 >```
 >
 >If you are using ROS2 Humble, install Gazebo Harmonic using the following command. Note that Gazebo Harmonic and ROS2 Humble is a 'non-default Gazebo/ROS2 pairing'.
