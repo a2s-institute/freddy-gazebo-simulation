@@ -53,19 +53,19 @@ By default, the `base_controller` for controlling the Robile base is a velocity 
 ```bash
 ros2 launch freddy_gazebo freddy_gazebo.launch.py arm_controller:=joint_trajectory base_controller:=position
 ```
-Valid values for `arm_controller` are `joint_trajectory` and `effort`. Valid values for `base_controller` are `position`, `velocity`, and `effort`. The `joint_trajectory` controller can accept position as well as velocity commands.
+Valid values for `arm_controller` are `joint_trajectory` (default) and `effort`. Valid values for `base_controller` are `position`, `velocity` (default), and `effort`. The `joint_trajectory` controller can accept position as well as velocity commands.
 
 ### Commanding the Robot's Joints
 For purposes of demonstration, commands can be given to each joint of each component of the robot through keyboard input. The executable for commanding the robot's joints can be launched using the following command:
 ```bash
-ros2 run freddy_gazebo freddy_gazebo
+ros2 run freddy_gazebo freddy_control
 ```
 
 The behaviour of this executable can be changed to match the controllers used when launching `freddy_gazebo.launch.py`. This can be done by providing `arm_controller` and `base_controller` arguments as follows:
 ```bash
-ros2 run freddy_gazebo freddy_gazebo --ros-args -p arm_controller:=joint_trajectory_velocity -p base_controller:=velocity
+ros2 run freddy_gazebo freddy_control --ros-args -p arm_controller:=joint_trajectory_velocity -p base_controller:=velocity
 ```
-Valid values for `arm_controller` are `joint_trajectory_position`, `joint_trajectory_velocity`, and `effort`. Valid values for `base_controller` are `position`, `velocity`, and `effort`. When using a `joint_trajectory_velocity` command scheme, joint positions are additionally rolled out (or integrated) using the commanded velocity.
+Valid values for `arm_controller` are `joint_trajectory_position` (default), `joint_trajectory_velocity`, and `effort`. Valid values for `base_controller` are `position`, `velocity` (default), and `effort`. When using a `joint_trajectory_velocity` command scheme, joint positions are additionally rolled out (or integrated) using the commanded velocity.
 
 The robot can be controlled using the keyboard as follows:
 ```
